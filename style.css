@@ -211,12 +211,14 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 3px;
         }
 
         .logo-img {
-            height: 55px;
-            width: auto;
+            height: 230px;
+            width: max-content;
+            padding-top: 15px;
+            align-self: left;
         }
 
         /* Menu de Navegação */
@@ -318,6 +320,13 @@
             align-items: center;
             gap: 50px;
         }
+        /* Ilustração lateral do Hero usando SVG dinâmico */
+        .hero-illustration {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         .hero-content h1 {
             font-size: 3.5rem;
@@ -338,20 +347,6 @@
             max-width: 600px;
         }
 
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        /* Ilustração lateral do Hero usando SVG dinâmico */
-        .hero-illustration {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
         .hero-circle-bg {
             position: absolute;
             width: 380px;
@@ -359,14 +354,16 @@
             background-color: rgba(255, 212, 0, 0.15);
             border-radius: 50%;
             animation: pulse 4s infinite ease-in-out;
+            overflow: hidden;
         }
 
         .hero-img-svg {
             position: relative;
-            z-index: 5;
             width: 100%;
+            height: 380px;
             max-width: 360px;
-            filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+            object-fit: cover;
+            border-radius: 100%;
         }
 
         @keyframes pulse {
@@ -416,6 +413,13 @@
             width: 100%;
             max-width: 400px;
             height: auto;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .farofas{
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 7px;
         }
 
         /* Cards de Missão, Visão e Valores */
@@ -1001,6 +1005,32 @@
 
         .footer-logo {
             align-self: flex-start;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logorod-img {
+            height: 170px;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .produtos {
+            color: #FFD400;
+            font-size: 19px;
+            font-weight: 800;
+        }
+
+        .kisabor {
+            color: #FFFFFF;
+            font-size: 23px;
+            font-weight: 800;
         }
 
         .footer-brand p {
