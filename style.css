@@ -181,8 +181,8 @@
             background-color: #128C7E;
         }
 
-        .whatsapp-float svg {
-            width: 32px;
+        .wpp-img {
+            width: 55px;
             height: 32px;
             fill: white;
         }
@@ -582,15 +582,17 @@
             padding: 4px 10px;
             border-radius: 50px;
             text-transform: uppercase;
+            z-index: 10;
         }
 
-        .product-card svg {
+        .product-card img {
             width: auto;
-            height: 140px;
+            height: 100%;
+            border-radius: 5px;
             transition: var(--transition);
         }
 
-        .product-card:hover .product-img-wrapper svg {
+        .product-card:hover .product-img-wrapper img {
             transform: scale(1.08);
         }
 
@@ -622,15 +624,16 @@
             font-size: 0.9rem;
         }
 
-        /* Lógica de Filtragem Baseada em CSS Puro */
-        #tab-all:checked ~ .products-grid .product-card {
-            display: flex;
-        }
+
 
         #tab-temperos:checked ~ .products-grid .product-card:not([data-cat="temperos"]),
         #tab-condimentos:checked ~ .products-grid .product-card:not([data-cat="condimentos"]),
-        #tab-especiarias:checked ~ .products-grid .product-card:not([data-cat="especiarias"]),
-        #tab-alimenticios:checked ~ .products-grid .product-card:not([data-cat="alimenticios"]) {
+        #tab-churrasco:checked ~ .products-grid .product-card:not([data-cat="churrasco"]),
+        #tab-outros:checked ~ .products-grid .product-card:not([data-cat="outros"]) {
+            display: none;
+        }
+
+        #tab-all:checked ~ .products-grid.fechado .product-card:nth-child(n+4) {
             display: none;
         }
 
@@ -638,11 +641,43 @@
         #tab-all:checked ~ .category-filter label[for="tab-all"],
         #tab-temperos:checked ~ .category-filter label[for="tab-temperos"],
         #tab-condimentos:checked ~ .category-filter label[for="tab-condimentos"],
-        #tab-especiarias:checked ~ .category-filter label[for="tab-especiarias"],
-        #tab-alimenticios:checked ~ .category-filter label[for="tab-alimenticios"] {
+        #tab-churrasco:checked ~ .category-filter label[for="tab-churrasco"],
+        #tab-outros:checked ~ .category-filter label[for="tab-outros"] {
             background-color: var(--primary-red);
             color: var(--white);
             border-color: var(--primary-red);
+        }
+
+        #btnVerMais {
+            display: block;
+            margin: 40px auto 0;
+            padding: 12px 28px;
+            background: linear-gradient(135deg, var(--primary-yellow), #ffcc00);
+            color: var(--dark-text);
+            font-size: 1rem;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+            letter-spacing: 0.3px;
+        }
+
+        #btnVerMais:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+            filter: brightness(1.05);
+        }
+
+        #btnVerMais:active {
+            transform: translateY(0);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+        }
+
+        #btnVerMais:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 204, 0, 0.4);
         }
 
         /* ==========================================================================
@@ -1179,36 +1214,55 @@
             }
 
             /* Menu de Navegação Colapsável */
+
+            /* Faz o botão hambúrguer APARECER no celular */
             .menu-toggle {
                 display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 30px;
+                height: 22px;
+                cursor: pointer;
+                z-index: 1010;
             }
 
+            /* Desenha as barrinhas do hambúrguer */
+            .menu-toggle span {
+                display: block;
+                width: 100%;
+                height: 3px;
+                background-color: #333333; /* Cor do hambúrguer (pode mudar para vermelho se quiser combinar com a PKS) */
+                border-radius: 2px;
+                transition: transform 0.3s ease, opacity 0.3s ease;
+            }
+
+            /* Transforma o menu em uma lista vertical que vem da esquerda */
             .nav-menu {
                 position: fixed;
                 top: 80px;
-                left: -100%;
+                left: -100%; /* Começa escondido */
                 width: 100%;
                 height: calc(100vh - 80px);
-                background-color: var(--white);
+                background-color: #ffffff;
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
                 padding-top: 50px;
                 gap: 30px;
                 box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                transition: var(--transition);
+                transition: left 0.4s ease;
                 z-index: 1005;
                 overflow-y: auto;
             }
 
-            /* Ativação do Menu Lateral via Rádio/Checkbox oculto */
+            /* ACCORDION / ANIMAÇÕES MOBILE (Quando o menu está aberto) */
             #menu-checkbox:checked ~ .nav-menu {
-                left: 0;
+                left: 0; /* Mostra o menu */
             }
 
-            /* Animação do Hamburger para X */
+            /* Transforma o hambúrguer em X */
             #menu-checkbox:checked ~ .menu-toggle span:nth-child(1) {
-                transform: translateY(9px) rotate(45deg);
+                transform: translateY(9.5px) rotate(45deg);
             }
 
             #menu-checkbox:checked ~ .menu-toggle span:nth-child(2) {
@@ -1216,9 +1270,9 @@
             }
 
             #menu-checkbox:checked ~ .menu-toggle span:nth-child(3) {
-                transform: translateY(-9px) rotate(-45deg);
+                transform: translateY(-9.5px) rotate(-45deg);
             }
-
+        }
             /* Elementos internos do Hero */
             .hero-grid {
                 grid-template-columns: 1fr;

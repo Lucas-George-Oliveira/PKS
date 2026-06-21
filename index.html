@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PKS - Produtos Ki Sabor</title>
     <!-- Favicon Alternativo usando SVG -->
-    <link rel="icon" type="image/svg+xml" href="midia/logo.png">
+    <link rel="icon" type="image/svg+xml" href="midia/icone_sitepks.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,26 +18,24 @@
        ========================================================================== -->
     <header class="header">
         <div class="container">
-            <!-- Logo PKS -->
+            <input type="checkbox" id="menu-checkbox" class="menu-checkbox">
+
             <a href="#inicio" class="logo" title="Ir para o Início">
-                <img src="midia/logo.png" class="logo-img" alt="logo">
+                <img src="midia/logo_pks.png" class="logo-img" alt="logo">
             </a>
 
-            <!-- Menu de Navegação -->
             <nav class="nav-menu">
                 <a href="#inicio" class="nav-link">Início</a>
                 <a href="#sobre" class="nav-link">Sobre nós</a>
                 <a href="#produtos" class="nav-link">Produtos</a>
                 <a href="#empresas" class="nav-link">Para Empresas</a>
                 <a href="#contato" class="nav-link">Contato</a>
-                <!-- Botão de WhatsApp visível no menu expandido para reforçar conversão comercial -->
-                <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos%20da%20PKS." target="_blank" class="btn btn-whatsapp header-btn">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.135-4.173a9.816 9.816 0 0 0 5.869 1.9c5.617-.001 10.187-4.57 10.19-10.19.001-2.722-1.054-5.28-2.971-7.199A10.114 10.114 0 0 0 12.008 1.63c-5.62 0-10.193 4.571-10.197 10.191a9.88 9.88 0 0 0 1.515 5.253L2.33 21.673l4.567-1.198zM18.02 14.7c-.327-.164-1.938-.956-2.238-1.066-.3-.11-.518-.164-.737.164-.218.328-.846 1.066-1.037 1.284-.19.218-.382.246-.71.082-1.283-.642-2.13-1.097-2.969-2.534-.221-.379-.221-.31-.055-.53.153-.203.328-.382.492-.574.164-.19.218-.328.328-.546.11-.218.055-.41-.027-.574-.082-.164-.737-1.777-1.01-2.433-.267-.64-.539-.553-.737-.563-.19-.01-.409-.01-.628-.01s-.573.082-.873.41c-.3.328-1.147 1.12-1.147 2.733s1.174 3.17 1.338 3.389c.164.218 2.312 3.53 5.598 4.946.781.337 1.39.539 1.863.69.784.249 1.498.214 2.062.129.629-.094 1.938-.792 2.21-1.557.272-.764.272-1.42.19-1.557-.082-.137-.3-.218-.628-.382z"/></svg>
+                <a href="https://wa.me/5563992423909?text=Ol%C3%A1!%20Gostaria%20de%20receber%20informa%C3%A7%C3%B5es%20sobre%20os%20produtos%20da%20PKS." target="_blank" class="btn btn-whatsapp header-btn">
+                    <img src="midia/whatsapp.png" class="wpp-img" alt="logo">
                     Fale Conosco
                 </a>
             </nav>
 
-            <!-- Botão Hamburguer Mobile -->
             <label for="menu-checkbox" class="menu-toggle">
                 <span></span>
                 <span></span>
@@ -146,42 +144,33 @@
             <!-- Mecanismo de Abas (CSS Puro) -->
             <!-- Declaração dos Inputs de Rádio no Topo do Bloco das Abas -->
             <input type="radio" id="tab-all" name="category-tab" checked>
-            <input type="radio" id="tab-temperos" name="category-tab">
             <input type="radio" id="tab-condimentos" name="category-tab">
-            <input type="radio" id="tab-especiarias" name="category-tab">
-            <input type="radio" id="tab-alimenticios" name="category-tab">
+            <input type="radio" id="tab-churrasco" name="category-tab">
+            <input type="radio" id="tab-temperos" name="category-tab">
+            <input type="radio" id="tab-outros" name="category-tab">
 
             <!-- Lista de Labels das Abas -->
             <div class="category-filter">
                 <label for="tab-all" class="filter-label">Todos</label>
-                <label for="tab-temperos" class="filter-label">Condimentos</label>
-                <label for="tab-condimentos" class="filter-label">Linha de Churrasco</label>
-                <label for="tab-especiarias" class="filter-label">Temperos Completos</label>
-                <label for="tab-alimenticios" class="filter-label">Outros</label>
+                <label for="tab-condimentos" class="filter-label">Condimentos</label>
+                <label for="tab-churrasco" class="filter-label">Linha de Churrasco</label>
+                <label for="tab-temperos" class="filter-label">Temperos Completos</label>
+                <label for="tab-outros" class="filter-label">Outros</label>
             </div>
 
             <!-- Grid de Cards de Produtos -->
-            <div class="products-grid">
-                
-                <!-- Produto 1: Temperos -->
-                <div class="product-card" data-cat="temperos">
+            <div class="products-grid fechado">
+
+                <!-- Produto 1: Cartelas-->
+                <div class="product-card" data-cat="condimentos">
                     <div class="product-img-wrapper">
-                        <span class="product-tag">Temperos</span>
-                        <!-- SVG Representativo do Tempero Completo PKS -->
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="65" y="40" width="70" height="130" rx="10" fill="#FFFFFF" stroke="#FFD400" stroke-width="4" />
-                            <rect x="75" y="25" width="50" height="15" rx="3" fill="#C1121F" />
-                            <rect x="65" y="70" width="70" height="40" fill="#C1121F" />
-                            <text x="100" y="95" font-family="sans-serif" font-weight="900" font-size="9" fill="#FFD400" text-anchor="middle">COMPLETO</text>
-                            <circle cx="100" cy="140" r="18" fill="#FFD400" />
-                            <!-- Ilustração de alho -->
-                            <path d="M 92,145 Q 100,125 108,145 Z" fill="#FFF" />
-                            <path d="M 95,145 Q 100,132 105,145 Z" fill="#EAEAEA" />
-                        </svg>
+                        <span class="product-tag">Condimentos</span>
+                        <!-- Cartelas -->
+                        <img src="midia/cartelapks.png" class="cartelapks" alt="Condimentos em cartelas">
                     </div>
                     <div class="product-info">
                         <div>
-                            <h4>Tempero Completo com Alho</h4>
+                            <h4>Condimentos em Cartelas</h4>
                             <p>O equilíbrio perfeito de sal com alho fresco triturado de alta qualidade. Ideal para arroz, carnes e cozidos cotidianos.</p>
                         </div>
                         <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20o%20Tempero%20Completo%20com%20Alho." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
@@ -189,26 +178,18 @@
                         </a>
                     </div>
                 </div>
-
-                <!-- Produto 2: Condimentos -->
+                
+                <!-- Produto 2: potes -->
                 <div class="product-card" data-cat="condimentos">
                     <div class="product-img-wrapper">
                         <span class="product-tag">Condimentos</span>
-                        <!-- SVG Representativo de Ketchup PKS -->
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M 75,50 Q 80,40 100,40 Q 120,40 125,50 L 130,160 Q 130,175 100,175 Q 70,175 70,160 Z" fill="#C1121F" />
-                            <rect x="85" y="25" width="30" height="15" rx="2" fill="#FFD400" />
-                            <rect x="71" y="80" width="58" height="40" fill="#FFD400" />
-                            <text x="100" y="105" font-family="sans-serif" font-weight="900" font-size="9" fill="#C1121F" text-anchor="middle">KETCHUP</text>
-                            <!-- Tomate ilustrativo -->
-                            <circle cx="100" cy="145" r="14" fill="#C1121F" stroke="#FFF" stroke-width="1.5" />
-                            <path d="M 95,133 Q 100,138 105,133" stroke="#25D366" stroke-width="3" fill="none" />
-                        </svg>
+                        <!-- Potes -->
+                        <img src="midia/potes_pks.png" class="potes" alt="Potes pks">
                     </div>
                     <div class="product-info">
                         <div>
-                            <h4>Ketchup Tradicional PKS</h4>
-                            <p>Produzido com polpa de tomates maduros selecionados, garantindo consistência encorpada e sabor levemente adocicado.</p>
+                            <h4>Condimentos em Potes</h4>
+                            <p>Importados de todo o mundo, buscam a <strong>maior qualidade</strong> com uma embalagem bonita, simples e fácil.</p>
                         </div>
                         <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20o%20Ketchup%20Tradicional." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
                             Solicitar Informações
@@ -216,104 +197,16 @@
                     </div>
                 </div>
 
-                <!-- Produto 3: Especiarias -->
-                <div class="product-card" data-cat="especiarias">
-                    <div class="product-img-wrapper">
-                        <span class="product-tag">Especiarias</span>
-                        <!-- SVG Representativo de Orégano PKS -->
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="65" y="40" width="70" height="130" rx="10" fill="#FFFFFF" stroke="#25D366" stroke-width="4" />
-                            <rect x="75" y="25" width="50" height="15" rx="3" fill="#C1121F" />
-                            <rect x="65" y="70" width="70" height="40" fill="#C1121F" />
-                            <text x="100" y="95" font-family="sans-serif" font-weight="900" font-size="9" fill="#FFD400" text-anchor="middle">ORÉGANO</text>
-                            <!-- Folhas flutuantes -->
-                            <circle cx="100" cy="140" r="18" fill="#EAEAEA" />
-                            <path d="M 90,140 Q 100,130 100,145 Q 100,140 90,140" fill="#25D366" />
-                            <path d="M 110,145 Q 105,135 110,130 Q 115,140 110,145" fill="#25D366" />
-                        </svg>
-                    </div>
-                    <div class="product-info">
-                        <div>
-                            <h4>Orégano Desidratado Premium</h4>
-                            <p>Folhas de orégano importadas selecionadas e desidratadas de forma ideal para preservar ao máximo os óleos essenciais e o aroma.</p>
-                        </div>
-                        <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20o%20Oregano%20Desidratado." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
-                            Solicitar Informações
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produto 4: Produtos Alimentícios -->
-                <div class="product-card" data-cat="alimenticios">
-                    <div class="product-img-wrapper">
-                        <span class="product-tag">Alimentícios</span>
-                        <!-- SVG Representativo de Batata Palha PKS -->
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="60" y="40" width="80" height="130" rx="8" fill="#FFD400" stroke="#C1121F" stroke-width="4" />
-                            <path d="M 60,70 L 140,70 L 140,110 L 60,110 Z" fill="#C1121F" />
-                            <text x="100" y="95" font-family="sans-serif" font-weight="900" font-size="9" fill="#FFFFFF" text-anchor="middle">BATATA PALHA</text>
-                            <!-- Palitos de batata fritos ilustrados -->
-                            <rect x="75" y="130" width="3" height="15" rx="1" fill="#FFD400" transform="rotate(15 75 130)" />
-                            <rect x="85" y="135" width="3" height="18" rx="1" fill="#FFD400" transform="rotate(-10 85 135)" />
-                            <rect x="100" y="125" width="3" height="14" rx="1" fill="#FFD400" transform="rotate(35 100 125)" />
-                            <rect x="115" y="132" width="3" height="20" rx="1" fill="#FFD400" transform="rotate(-25 115 132)" />
-                        </svg>
-                    </div>
-                    <div class="product-info">
-                        <div>
-                            <h4>Batata Palha Extra Fina</h4>
-                            <p>Sequíssima, super crocante e sem conservantes artificiais. O complemento obrigatório para strogonoffs, cachorros-quentes e saladas.</p>
-                        </div>
-                        <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20a%20Batata%20Palha." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
-                            Solicitar Informações
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produto 5: Temperos -->
-                <div class="product-card" data-cat="temperos">
-                    <div class="product-img-wrapper">
-                        <span class="product-tag">Temperos</span>
-                        <!-- SVG Representativo de Tempero Chimichurri PKS -->
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="65" y="40" width="70" height="130" rx="10" fill="#FFFFFF" stroke="#25D366" stroke-width="4" />
-                            <rect x="75" y="25" width="50" height="15" rx="3" fill="#C1121F" />
-                            <rect x="65" y="70" width="70" height="40" fill="#C1121F" />
-                            <text x="100" y="95" font-family="sans-serif" font-weight="900" font-size="8" fill="#FFD400" text-anchor="middle">CHIMICHURRI</text>
-                            <circle cx="100" cy="140" r="18" fill="#FFD400" />
-                            <path d="M 95,135 Q 105,145 100,150" stroke="#25D366" stroke-width="3" fill="none" />
-                        </svg>
-                    </div>
-                    <div class="product-info">
-                        <div>
-                            <h4>Tempero Chimichurri PKS</h4>
-                            <p>Mix especial argentino de ervas nobres secas desidratadas (alho, cebola, salsa, orégano, pimenta). Perfeito para churrascos e assados.</p>
-                        </div>
-                        <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20o%20Tempero%20Chimichurri." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
-                            Solicitar Informações
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Produto 6: Condimentos -->
+                <!-- Produto 3: Linha Institucional -->
                 <div class="product-card" data-cat="condimentos">
                     <div class="product-img-wrapper">
                         <span class="product-tag">Condimentos</span>
-                        <!-- SVG Representativo de Mostarda PKS -->
-                        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M 75,50 Q 80,40 100,40 Q 120,40 125,50 L 130,160 Q 130,175 100,175 Q 70,175 70,160 Z" fill="#FFD400" />
-                            <rect x="85" y="25" width="30" height="15" rx="2" fill="#C1121F" />
-                            <rect x="71" y="80" width="58" height="40" fill="#C1121F" />
-                            <text x="100" y="105" font-family="sans-serif" font-weight="900" font-size="9" fill="#FFD400" text-anchor="middle">MOSTARDA</text>
-                            <!-- Detalhes do grão de mostarda -->
-                            <circle cx="100" cy="145" r="4" fill="#333" />
-                            <circle cx="90" cy="140" r="3" fill="#333" />
-                            <circle cx="110" cy="150" r="3.5" fill="#333" />
-                        </svg>
+                        <!-- linha institucional -->
+                        <img src="midia/pote_institucional_pks.png" class="institucional" alt="Linha Institucional PKS">
                     </div>
                     <div class="product-info">
                         <div>
-                            <h4>Mostarda Escura Especial</h4>
+                            <h4>Linha Institucional</h4>
                             <p>Mostarda produzida com sementes selecionadas e receita clássica europeia, oferecendo sabor pungente e marcante a lanches e carnes.</p>
                         </div>
                         <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20a%20Mostarda%20Escura%20Especial." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
@@ -322,6 +215,117 @@
                     </div>
                 </div>
 
+                <!-- Produto 4: Temperos Completo-->
+                <div class="product-card" data-cat="temperos">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Temperos Completos</span>
+                        <!-- SVG Representativo do Tempero Completo PKS -->
+                        <img src="midia/tempero_completo_pks.png" class="temperocomp" alt="Tempero Completo">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h4>Temperos Completos</h4>
+                            <p>O equilíbrio perfeito de sal com alho fresco triturado de alta qualidade. Ideal para arroz, carnes e cozidos cotidianos.</p>
+                        </div>
+                        <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20o%20Tempero%20Completo%20com%20Alho." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
+                            Solicitar Informações
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 5: Alho picado -->
+                <div class="product-card" data-cat="temperos">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Temperos Completos</span>
+                        <!-- Alho picado-->
+                        <img src="midia/alho_picado_pks.png" class="alhopicado" alt="Alho Picado PKS">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h4>Alhos Picados</h4>
+                            <p>Mix especial argentino de ervas nobres secas desidratadas (alho, cebola, salsa, orégano, pimenta). Perfeito para churrascos e assados.</p>
+                        </div>
+                        <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20o%20Tempero%20Chimichurri." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
+                            Solicitar Informações
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 6: Farofas -->
+                <div class="product-card" data-cat="churrasco">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Linha Churrasco</span>
+                        <!-- Farofa -->
+                        <img src="midia/farofaspks.png" class="farofas" alt="Farofas temperadas pks">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h4>Farofas Temperadas</h4>
+                            <p>Mostarda produzida com sementes selecionadas e receita clássica europeia, oferecendo sabor pungente e marcante a lanches e carnes.</p>
+                        </div>
+                        <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20a%20Mostarda%20Escura%20Especial." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
+                            Solicitar Informações
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 7: Sal de Parrilha -->
+                <div class="product-card" data-cat="churrasco">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Linha Churrasco</span>
+                        <!-- sal de parrilha -->
+                        <img src="midia/saldeparrilha.png" class="saldeparrilha" alt="Sal de Parrilha">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h4>Sal de Parrilha</h4>
+                            <p>Mostarda produzida com sementes selecionadas e receita clássica europeia, oferecendo sabor pungente e marcante a lanches e carnes.</p>
+                        </div>
+                        <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20a%20Mostarda%20Escura%20Especial." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
+                            Solicitar Informações
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 8: Sal Grosso -->
+                <div class="product-card" data-cat="churrasco">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Linha Churrasco</span>
+                        <!-- Sal Grosso -->
+                        <img src="midia/sal_grosso_pks.png" class="salgrosso" alt="Sal grosso">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h4>Sal Grosso</h4>
+                            <p>Sais Grossos dos <strong>mais diversos</strong> tipos, extremamente popular para quem quer fazer aqueles churrascos <strong>diferenciados</strong> e saborosos.</p>
+                        </div>
+                        <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20o%20Oregano%20Desidratado." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
+                            Solicitar Informações
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Produto 9: Utensílios -->
+                <div class="product-card" data-cat="outros">
+                    <div class="product-img-wrapper">
+                        <span class="product-tag">Outros</span>
+                        <!-- Utensilios -->
+                        <img src="midia/utensilios_pks.png" class="utensilios" alt="Utensilios pks">
+                    </div>
+                    <div class="product-info">
+                        <div>
+                            <h4>Utensílios</h4>
+                            <p>Utensílios para necessidades diárias na cozinha: colheres e garfos de alumínio, colher de pau, pilão e tábua de plástico.</p>
+                        </div>
+                        <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20informa%C3%A7%C3%B5es%20e%20pre%C3%A7os%20sobre%20a%20Batata%20Palha." target="_blank" class="btn btn-whatsapp btn-card-whatsapp">
+                            Solicitar Informações
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button id="btnVerMais" class="vermais" onclick="document.getElementById('produtos').scrollIntoView({behavior: 'smooth'})">
+                Ver mais produtos
+            </button>
             </div>
         </div>
     </section>
@@ -389,7 +393,7 @@
                         </div>
                     </div>
 
-                    <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Represento%20uma%20empresa/supermercado%20e%20gostaria%20de%20solicitar%20atendimento%20comercial%20atacadista%20da%20PKS." target="_blank" class="btn btn-secondary btn-card-whatsapp">
+                    <a href="https://wa.me/5563992423909?text=Ol%C3%A1!%20Represento%20uma%20empresa/supermercado%20e%20gostaria%20de%20solicitar%20atendimento%20comercial%20atacadista%20da%20PKS." target="_blank" class="btn btn-secondary btn-card-whatsapp">
                         Solicitar Atendimento Comercial B2B
                     </a>
                 </div>
@@ -495,7 +499,7 @@
                             </div>
                             <div class="contact-method-details">
                                 <h5>Nosso Endereço</h5>
-                                <p>Av. das Especiarias, 1500 - Setor Industrial - Palmas/TO</p>
+                                <p>Rua Amélia Jacinta, Qd B Lt 22, Residencial Belchior, Araguaína - TO, CEP 77825-004</p>
                             </div>
                         </div>
 
@@ -506,7 +510,7 @@
                             </div>
                             <div class="contact-method-details">
                                 <h5>Fones de Atendimento</h5>
-                                <p>(99) 99999-9999 (WhatsApp comercial) <br> (99) 3333-3333 (Fixo)</p>
+                                <p>(63) 99242-3909 (WhatsApp comercial) <br> (63) 9242-3909 (Fixo)</p>
                             </div>
                         </div>
 
@@ -517,7 +521,7 @@
                             </div>
                             <div class="contact-method-details">
                                 <h5>E-mail de Suporte</h5>
-                                <p>comercial@produtoskisabor.com.br <br> sac@produtoskisabor.com.br</p>
+                                <p>george@distribuidorakisabor.com <br> george@distribuidorakisabor.com</p>
                             </div>
                         </div>
                     </div>
@@ -567,7 +571,7 @@
                 <div class="footer-brand">
                     <a href="#inicio" class="footer-logo">
                         <div class="logo-container">
-                            <img src="midia/logo.png" class="logorod-img" alt="Logo PKS">
+                            <img src="midia/logo_pks.png" class="logorod-img" alt="Logo PKS">
 
                             <div class="logo-text">
                                 <span class="produtos">PRODUTOS</span>
@@ -606,11 +610,11 @@
                     <div class="footer-contact-list">
                         <div class="footer-contact-item">
                             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                            <span>Av. das Especiarias, 1500 - Setor Industrial, Palmas - TO, CEP 77000-000</span>
+                            <span>Rua Amélia Jacinta, Qd B Lt 22, Residencial Belchior, Araguaína - TO, CEP 77825-004</span>
                         </div>
                         <div class="footer-contact-item">
                             <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.045 15.045 0 0 1-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C9.1 6.34 8.9 5.15 8.9 3.91c0-.55-.45-1-1-1H4.03c-.55 0-1 .45-1 1C3.03 14.06 12.94 23.97 21 23.97c.55 0 1-.45 1-1v-6.59c0-.54-.45-.99-.99-.99z"/></svg>
-                            <span>(99) 99999-9999 / (99) 3333-3333</span>
+                            <span>(63) 97400-3939 / (63) 99242-3909</span>
                         </div>
                     </div>
                 </div>
@@ -619,15 +623,16 @@
             <!-- Direitos Autorais -->
             <div class="footer-bottom">
                 <p>&copy; 2026 PKS – Produtos Ki Sabor. Todos os direitos reservados.</p>
-                <p>Criado por <a href="#" target="_blank">Lucas George</a></p>
+                <p>Criado por <a href="#" target="_blank">Ki Sabor</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Botão Flutuante Permanente do WhatsApp -->
-    <a href="https://wa.me/5599999999999?text=Ol%C3%A1!%20Gostaria%20de%20receber%20atendimento%20da%20PKS%20-%20Produtos%20Ki%20Sabor." class="whatsapp-float" target="_blank" title="Fale pelo WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.135-4.173a9.816 9.816 0 0 0 5.869 1.9c5.617-.001 10.187-4.57 10.19-10.19.001-2.722-1.054-5.28-2.971-7.199A10.114 10.114 0 0 0 12.008 1.63c-5.62 0-10.193 4.571-10.197 10.191a9.88 9.88 0 0 0 1.515 5.253L2.33 21.673l4.567-1.198zM18.02 14.7c-.327-.164-1.938-.956-2.238-1.066-.3-.11-.518-.164-.737.164-.218.328-.846 1.066-1.037 1.284-.19.218-.382.246-.71.082-1.283-.642-2.13-1.097-2.969-2.534-.221-.379-.221-.31-.055-.53.153-.203.328-.382.492-.574.164-.19.218-.328.328-.546.11-.218.055-.41-.027-.574-.082-.164-.737-1.777-1.01-2.433-.267-.64-.539-.553-.737-.563-.19-.01-.409-.01-.628-.01s-.573.082-.873.41c-.3.328-1.147 1.12-1.147 2.733s1.174 3.17 1.338 3.389c.164.218 2.312 3.53 5.598 4.946.781.337 1.39.539 1.863.69.784.249 1.498.214 2.062.129.629-.094 1.938-.792 2.21-1.557.272-.764.272-1.42.19-1.557-.082-.137-.3-.218-.628-.382z"/></svg>
+    <a href="https://wa.me/5563992423909?text=Ol%C3%A1!%20Gostaria%20de%20receber%20atendimento%20da%20PKS%20-%20Produtos%20Ki%20Sabor." class="whatsapp-float" target="_blank" title="Fale pelo WhatsApp">
+        <img src="midia/whatsapp.png" class="wpp-img" alt="logo">
     </a>
 
+    <script src="script.js"></script>
 </body>
 </html>
