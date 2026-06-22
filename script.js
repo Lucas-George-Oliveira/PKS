@@ -2,6 +2,21 @@ const grid = document.querySelector(".products-grid");
 const btn = document.getElementById("btnVerMais");
 const btncat = document.getElementById("btnVerMais");
 const catalogo = document.getElementById("produtos");
+const menuToggle = document.querySelector('.menu-toggle');
+const navMenu = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-menu .nav-link, .nav-menu .btn');
+
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
+});
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        menuToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+    });
+});
 
 document.getElementById("tab-all").addEventListener("change", () => {
     grid.classList.add("fechado");

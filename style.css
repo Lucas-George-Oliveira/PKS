@@ -182,7 +182,7 @@
         }
 
         .wpp-img {
-            width: 55px;
+            width: 60px;
             height: 32px;
             fill: white;
         }
@@ -1213,27 +1213,19 @@
                 padding: 60px 0;
             }
 
-            /* Menu de Navegação Colapsável */
-
-            /* Faz o botão hambúrguer APARECER no celular */
+            /* Faz o botão hambúrguer APARECER e garante que ele não seja esmagado */
             .menu-toggle {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                width: 30px;
-                height: 22px;
+                display: flex !important; /* O !important garante que ignore o 'none' do global se houver conflito de leitura */
+                pointer-events: auto !important; /* Força o botão a aceitar cliques */
                 cursor: pointer;
-                z-index: 1010;
+                flex-shrink: 0; /* Impede o flexbox pai de esmagar o botão para 0px */
+                width: 30px;
+                height: auto; /* Deixa o gap do global controlar a altura interna */
             }
 
-            /* Desenha as barrinhas do hambúrguer */
+            /* Ajusta as barrinhas caso queira mudar algo no mobile, senão o global já resolve */
             .menu-toggle span {
-                display: block;
-                width: 100%;
-                height: 3px;
-                background-color: #333333; /* Cor do hambúrguer (pode mudar para vermelho se quiser combinar com a PKS) */
-                border-radius: 2px;
-                transition: transform 0.3s ease, opacity 0.3s ease;
+                background-color: #333333; /* Força a cor cinza caso não queira o vermelho do global no mobile */
             }
 
             /* Transforma o menu em uma lista vertical que vem da esquerda */
@@ -1241,7 +1233,7 @@
                 position: fixed;
                 top: 80px;
                 left: -100%; /* Começa escondido */
-                width: 100%;
+                width: 50%;
                 height: calc(100vh - 80px);
                 background-color: #ffffff;
                 flex-direction: column;
@@ -1249,30 +1241,28 @@
                 justify-content: flex-start;
                 padding-top: 50px;
                 gap: 30px;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
                 transition: left 0.4s ease;
-                z-index: 1005;
+                z-index: 99999 !important;
                 overflow-y: auto;
             }
 
-            /* ACCORDION / ANIMAÇÕES MOBILE (Quando o menu está aberto) */
-            #menu-checkbox:checked ~ .nav-menu {
-                left: 0; /* Mostra o menu */
+            .nav-menu.active {
+                left: 0 !important;
             }
 
-            /* Transforma o hambúrguer em X */
-            #menu-checkbox:checked ~ .menu-toggle span:nth-child(1) {
-                transform: translateY(9.5px) rotate(45deg);
+            /* Quando o botão tiver a classe 'active', vira X */
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(9.5px) rotate(45deg) !important;
             }
-
-            #menu-checkbox:checked ~ .menu-toggle span:nth-child(2) {
-                opacity: 0;
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0 !important;
             }
-
-            #menu-checkbox:checked ~ .menu-toggle span:nth-child(3) {
-                transform: translateY(-9.5px) rotate(-45deg);
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-9.5px) rotate(-45deg) !important;
             }
-        }
+                
+        
             /* Elementos internos do Hero */
             .hero-grid {
                 grid-template-columns: 1fr;
@@ -1295,7 +1285,7 @@
             }
 
             .hero-illustration {
-                order: -1; /* Traz imagem acima no mobile */
+                display: none; /* Traz imagem acima no mobile */
             }
 
             .hero-circle-bg {
@@ -1337,6 +1327,31 @@
             .form-group-full {
                 grid-column: span 1;
             }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid > *:last-child {
+                grid-column: span 1;
+            }
+            .footer-brand{
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+            }
+
+            .footer-logo{
+                display: flex;
+                justify-content: center;
+                align-items: center; 
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        
         }
 
         /* 3. Responsividade para Celulares (max-width: 480px) */
