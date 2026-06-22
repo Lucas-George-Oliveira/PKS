@@ -1266,7 +1266,14 @@
                 transform: translateY(-9.5px) rotate(-45deg) !important;
             }
                 
-        
+            /*header*/
+            .logo img{
+                max-width: 100%;
+                width: 100%;
+                height: Auto;
+                max-height: 230px;
+            }
+
             /* Elementos internos do Hero */
             .hero-grid {
                 grid-template-columns: 1fr;
